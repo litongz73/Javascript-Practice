@@ -84,7 +84,7 @@ var CountVowel = (str) => {
 
 console.log(CountVowel('The quick brown fox'));
 
-// 8.accepts a number as a parameter and check the number is prime or not.
+// 8. accepts a number as a parameter and check the number is prime or not.
 var isPrime = (num) => {
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
