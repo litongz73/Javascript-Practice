@@ -311,3 +311,23 @@ var bubbleSort = (arr) => {
 };
 let arr = [5, 3, 8, 4, 2];
 console.log(bubbleSort(arr));
+
+// 25.  Write a JavaScript function that accept a list of country names as input and returns the longest country name as output.
+var longestCountryName = (arr) => {
+  let index = 0;
+  for (let i in arr) {
+    if (arr[i] > arr[index]) {
+      index = i;
+    }
+  }
+  return arr[index];
+};
+
+let countryList = ['Australia', 'Germany', 'United States of America'];
+console.log(longestCountryName(countryList));
+
+
+
+var longestSubString = (str) => {
+  
+}
