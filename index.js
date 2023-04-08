@@ -23,8 +23,21 @@ var isPalindrome = function (x) {
   }
   return true;
 };
+console.log(isPalindrome('abcba'));
+console.log(isPalindrome('abc'));
 
-// 3.generates all combinations of a string
+// 3. Write a JavaScript function that generates all combinations of a string.
+// probability use bitmasking is quickest
+var stringCombinations = (str) => {
+  let comb = [];
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j < str.length + 1; j++) {
+      comb.push(str.slice(i, j));
+    }
+  }
+  return comb;
+};
+console.log(stringCombinations('34567'));
 
 // 4. Write a JavaScript function that returns a passed string with letters in alphabetical order
 var alphabeticalOrder = (str) => {
@@ -47,7 +60,6 @@ var toProperCase = (str) => {
 console.log(toProperCase('the quick brown fox'));
 
 //6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
-
 let var1 = 'Web Development Tutorial';
 
 var longestWords = (str) => {
