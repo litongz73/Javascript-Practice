@@ -347,3 +347,20 @@ var longestSubstring = (str) => {
 };
 
 console.log(longestSubstring('abcdefgabcdef'));
+
+// 27.  Write a JavaScript function that returns the longest palindrome in a given string.
+// No idea How to do :)
+var longestPalindrome = (str) => {};
+
+//28. Write a JavaScript program to pass a 'JavaScript function' as parameter.
+var functioncCaller = (callback, ...args) => {
+  return callback(args[0]);
+};
+console.log(functioncCaller(longestSubstring, 'abcdefgabcdef'));
+
+//29. Write a JavaScript function to get the function name.
+
+var getFunctionName = (callback) => {
+  return callback.name;
+};
+console.log(getFunctionName(longestCountryName));
