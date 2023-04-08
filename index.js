@@ -295,3 +295,19 @@ console.log(countOccurences('microsoft.com', 'o'));
 var firstNonRepeatedChar = (str) => {
   let arr = getOccurences(str);
 };
+
+// 24. Write a JavaScript function to apply Bubble Sort algorithm
+var bubbleSort = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] - arr[j + 1] > 0) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+};
+let arr = [5, 3, 8, 4, 2];
+console.log(bubbleSort(arr));
