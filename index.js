@@ -327,4 +327,23 @@ let countryList = ['Australia', 'Germany', 'United States of America'];
 console.log(longestCountryName(countryList));
 
 // 26. Write a JavaScript function to find longest substring in a given a string without repeating characters;
-var longestSubString = (str) => {};
+var longestSubstring = (str) => {
+  let left = 0,
+    right = 0;
+  let dictionary = {};
+  let counter = 0;
+
+  while (left < str.length && right < str.length) {
+    let x = str.charAt(right);
+    if (x in dictionary) {
+      left = Math.max(left, dictionary[x] + 1);
+    }
+    dictionary[x] = right;
+    counter = Math.max(counter, right - left + 1);
+    right++;
+  }
+
+  return str.slice(left, right);
+};
+
+console.log(longestSubstring('abcdefgabcdef'));
