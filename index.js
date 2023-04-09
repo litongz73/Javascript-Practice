@@ -287,13 +287,9 @@ var generateRandomString = (len) => {
 console.log(generateRandomString(10));
 
 // 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array
-var subsetWithLengthK = (arr) => {
-  for (let each of arr) {
-    if (arr.indexOf(each) === arr.lastIndexOf(each)) return each;
-  }
-};
+var subsetWithLengthK = (arr) => {};
 
-console.log(subsetWithLengthK('aabbccddeefgg'));
+console.log(subsetWithLengthK());
 
 // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.
 var countOccurences = (str, letter) => {
@@ -311,8 +307,13 @@ console.log(countOccurences('microsoft.com', 'o'));
 
 // 23. Write a JavaScript function to find the first not repeated character.
 var firstNonRepeatedChar = (str) => {
-  let arr = getOccurences(str);
+  let arr = str.split('');
+  for (let each of arr) {
+    if (arr.indexOf(each) === arr.lastIndexOf(each)) return each;
+  }
 };
+
+console.log(firstNonRepeatedChar('aabbccddeeffgg'));
 
 // 24. Write a JavaScript function to apply Bubble Sort algorithm
 var bubbleSort = (arr) => {
