@@ -370,28 +370,19 @@ console.log(longestSubstring('abcdefgabcdef'));
 // 27.  Write a JavaScript function that returns the longest palindrome in a given string.
 // No idea How to do :)
 var longestPalindrome = (str) => {
-  let result = '';
-  let arr = str.split('');
-  for (let index in arr) {
-    let temp = getPalindrome(arr, index, index);
+  let maxLength = 0;
+  let longestPalindrome = '';
 
-    if (temp.length > result.length) {
-      result = temp;
-    }
-    temp = getPalindrome(arr, index, index + 1);
-    if (temp.length > result.length) {
-      result = temp;
+  for (let i = 0; i < str.length; i++) {
+    for (let j = i + 1; j <= str.length; j++) {
+      let substring = str.slice(i, j);
+      if (isPalindrome(substring) && substring.length > maxLength) {
+        maxLength = substring.length;
+        longestPalindrome = substring;
+      }
     }
   }
-  return result.join('');
-};
-
-var getPalindrome = (arr, left, right) => {
-  while (left >= 0 && right < arr.length && arr[left] === arr[right]) {
-    left = left - 1;
-    right = right + 1;
-  }
-  return arr.slice(left + 1, right);
+  return longestPalindrome;
 };
 
 console.log(longestPalindrome('abcdedcbareraereara'));
